@@ -1,0 +1,22 @@
+ /* استایل‌های فوتر */
+        footer {
+            background-color: #2b5a27;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        footer a {
+            color: #4da3ff;
+            margin: 0 10px;
+            text-decoration: none;
+            
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        h1{font-size: 30px;}
+        p{font-size: 20px;}
+        /* استایل‌های فوتر */
