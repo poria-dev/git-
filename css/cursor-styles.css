@@ -1,0 +1,32 @@
+/* 🖱️ cursor-styles.css - Custom $ Terminal Prompt */
+
+/* Hide default cursor everywhere */
+* {
+    cursor: none !important;
+}
+
+/* Custom Cursor styling */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999999;
+    color: var(--success);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 0 0 8px rgba(63, 185, 80, 0.5);
+    /* Ensure it doesn't break layout */
+    margin-top: -12px;
+    margin-left: 4px;
+}
+
+.custom-cursor .blink {
+    animation: blink 500ms step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

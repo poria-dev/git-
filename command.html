@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitSphere 💻 | Terminal Practice</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cursor-styles.css">
+</head>
+<body>
+    <script src="js/preloader.js"></script>
+
+    <div id="header"></div>
+
+    <main class="container main-wrapper terminal-page">
+        <div class="grid-2 terminal-container">
+            <section class="panel terminal-panel flex-col">
+                <div class="terminal-header flex-row">
+                    <span class="dot close"></span>
+                    <span class="dot minimize"></span>
+                    <span class="dot expand"></span>
+                    <span class="title">user@gitsphere:~</span>
+                </div>
+                <div id="terminalOutput" class="terminal-output">
+                    <div class="line welcome">✨ Welcome to the GitSphere Terminal Simulator. Type a command to practice!</div>
+                </div>
+                <div class="terminal-input-row flex-row">
+                    <span class="prompt-symbol">$</span>
+                    <input type="text" id="terminalInput" autofocus autocomplete="off" spellcheck="false" aria-label="Terminal input">
+                </div>
+                <div class="terminal-controls flex-row">
+                    <button id="btnClear" class="btn">🧹 Clear</button>
+                    <button id="btnRandom" class="btn">🎲 Random Command</button>
+                </div>
+            </section>
+
+            <section class="panel helper-panel flex-col">
+                <h2>💡 Command Helper</h2>
+                <div class="progress-container flex-col">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <span id="progressText">0/20 mastered</span>
+                </div>
+                <p>Try typing these core commands to build muscle memory:</p>
+                <ul id="suggestedCommands" class="helper-list">
+                    </ul>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/git-commands.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/terminal-engine.js"></script>
+</body>
+</html>
