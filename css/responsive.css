@@ -1,0 +1,75 @@
+/* 📱 responsive.css - Extreme Mobile-First */
+
+/* Fluid Typography */
+html {
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.2rem);
+}
+
+/* Ensure touch targets are accessible */
+button, .nav-link, #searchInput, .copy-btn {
+    min-height: 44px;
+}
+
+/* Base Mobile (Default) */
+.grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+}
+.terminal-container {
+    flex-direction: column;
+}
+.navbar {
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+.navbar nav ul {
+    gap: var(--space-sm);
+}
+
+/* 📱 Tablet Portrait */
+@media (min-width: 640px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 💻 Tablet Landscape / Small Desktop */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+    }
+    .navbar nav ul {
+        gap: var(--space-lg);
+    }
+}
+
+/* 🖥️ Desktop */
+@media (min-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 🛑 Respect Prefers-Reduced-Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    .card.is-flipped .card-inner {
+        transform: none; /* Disable 3D flip */
+    }
+    .card-back {
+        position: relative; /* Show content immediately on click fallback */
+        transform: none;
+        display: none;
+    }
+    .card.is-flipped .card-back {
+        display: flex;
+    }
+    .card.is-flipped .card-front {
+        display: none;
+    }
+}

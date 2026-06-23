@@ -1,0 +1,297 @@
+/* 🧩 components.css - UI Modules */
+
+/* 🧭 Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--overlay);
+    backdrop-filter: blur(8px);
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border);
+    justify-content: space-between;
+}
+
+.navbar nav ul {
+    list-style: none;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    color: var(--text-primary);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link.active, .nav-link:hover {
+    border-bottom-color: var(--accent);
+}
+
+/* 💊 Pills */
+.category-pills {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+    justify-content: center;
+}
+
+.pill {
+    background-color: var(--border);
+    color: var(--text-primary);
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.pill:hover, .pill.active {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+/* 🔍 Search Input */
+#searchInput {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 12px var(--space-md);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* 🃏 Cards & Flip Effect */
+.card {
+    perspective: 1000px;
+    min-height: 220px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover .card-front, .card:hover .card-back {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    border-color: var(--text-secondary);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+}
+
+.cmd-title {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    margin-bottom: var(--space-sm);
+    font-size: 1.1rem;
+}
+
+.cmd-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.card-tags {
+    margin-top: auto;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: var(--bg-primary);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.copy-btn {
+    margin-top: var(--space-sm);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    align-self: flex-start;
+}
+
+.copy-btn:hover {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+/* 🖥️ Terminal Panel */
+.terminal-container {
+    margin-top: var(--space-lg);
+}
+
+.panel {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--space-md);
+    min-height: 500px;
+}
+
+.terminal-header {
+    background: var(--border);
+    margin: calc(var(--space-md) * -1) calc(var(--space-md) * -1) var(--space-md);
+    padding: 8px var(--space-md);
+    border-radius: 12px 12px 0 0;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.dot.close { background: var(--danger); }
+.dot.minimize { background: var(--warning); }
+.dot.expand { background: var(--success); }
+
+.terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 400px;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.terminal-input-row {
+    font-family: var(--font-mono);
+    gap: 8px;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border);
+}
+
+.prompt-symbol {
+    color: var(--success);
+    font-weight: bold;
+}
+
+#terminalInput {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    width: 100%;
+}
+
+#terminalInput:focus {
+    outline: none;
+}
+
+.terminal-controls {
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.btn {
+    background: var(--border);
+    color: var(--text-primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+/* 📊 Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: var(--space-sm) 0;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--success);
+    transition: width 0.4s ease;
+}
+
+.helper-list {
+    margin-top: var(--space-md);
+    list-style: none;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-mono);
+}
+
+/* 🦶 Footer */
+.footer {
+    margin-top: auto;
+    padding: var(--space-lg);
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* 💨 Preloader Overlay */
+#git-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    transition: opacity 0.5s ease;
+}
+
+#preloader-term {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 1.2rem;
+    min-height: 1.5rem;
+}

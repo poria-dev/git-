@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitSphere 🚀 | Learn. Practice. Master.</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cursor-styles.css">
+</head>
+<body>
+    <script src="js/preloader.js"></script>
+
+    <div id="header"></div>
+
+    <main class="container main-wrapper">
+        <section class="hero flex-col flex-center">
+            <h1>📘 Master Git, One Command at a Time</h1>
+            <p class="tagline">Learn. Practice. Master. Explore the definitive Git command manual.</p>
+        </section>
+
+        <section class="filters flex-col">
+            <input type="text" id="searchInput" placeholder="🔍 Search commands, descriptions, tags..." aria-label="Search">
+            <div class="category-pills flex-row" id="categoryPills">
+                <button class="pill active" data-category="All">All</button>
+                <button class="pill" data-category="Setup">Setup</button>
+                <button class="pill" data-category="Snapshot">Snapshot</button>
+                <button class="pill" data-category="Branching">Branching</button>
+                <button class="pill" data-category="Merging">Merging</button>
+                <button class="pill" data-category="Remote">Remote</button>
+                <button class="pill" data-category="Inspection">Inspection</button>
+                <button class="pill" data-category="Undoing">Undoing</button>
+                <button class="pill" data-category="Advanced">Advanced</button>
+            </div>
+            <p class="stats">📊 <span id="commandCount">0</span> commands available</p>
+        </section>
+
+        <section>
+            <div class="card-grid grid-3" id="commandGrid">
+                </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/git-commands.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
